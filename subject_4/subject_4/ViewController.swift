@@ -11,14 +11,18 @@ class ViewController: UIViewController {
     
     private var count = 0
     @IBOutlet private weak var countLabel: UILabel!
+
     @IBAction private func countUpButton(_ sender: UIButton) {
         count += 1
-        countLabel.text = String(count)
+        updateCountLabel()
     }
+
     @IBAction private func clearCountButton(_ sender: UIButton) {
         count = 0
+        updateCountLabel()
+    }
+
+    private func updateCountLabel() {
         countLabel.text = String(count)
     }
-    
 }
-
